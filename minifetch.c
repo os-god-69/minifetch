@@ -67,16 +67,18 @@ int main() {
         printf("\033[1;36m   /  (  )  \\    \033[0m   \033[1;36mUptime:\033[0m %ldh %ldm\n", uptime_hours, uptime_mins);
         printf("\033[1;36m  /  ______  \\   \033[0m   \033[1;36mMemory:\033[0m %ld MiB / %ld MiB\n", used_ram, total_ram);
         printf("\033[1;36m /_             \\\033[0m\n");
-    } 
+     } 
     else if (strstr(os_id, "mint") != NULL) {
-        // High-fidelity Linux Mint Shield & Leaf Art
-        printf("\033[1;32m   ___________   \033[0m   \033[1;32m%s\033[0m@\033[1;32m%s\033[0m\n", username, hostname);
-        printf("\033[1;32m  /  ________ \\  \033[0m   ---------------------\n");
-        printf("\033[1;32m /  /  _   _  \\  \033[0m   \033[1;32mOS:\033[0m     %s\n", os_name);
-        printf("\033[1;32m|  |  | | | |  | \033[0m   \033[1;32mKernel:\033[0m %s\n", os_info.release);
-        printf("\033[1;32m|  |  | | | |  | \033[0m   \033[1;32mUptime:\033[0m %ldh %ldm\n", uptime_hours, uptime_mins);
-        printf("\033[1;32m \\  \\ |_| |_| /  \033[0m   \033[1;32mMemory:\033[0m %ld MiB / %ld MiB\n", used_ram, total_ram);
-        printf("\033[1;32m  \\__________/   \033[0m\n");
+        // High-Fidelity Block M Wrapped in a Clean Circle Frame (Green)
+        printf("\033[1;32m   ▄████████▄   \033[0m   \033[1;32m%s\033[0m@\033[1;32m%s\033[0m\n", username, hostname);
+        printf("\033[1;32m  ██  █    █  ██ \033[0m   ---------------------\n");
+        printf("\033[1;32m ██  ███  ███  ██\033[0m   \033[1;32mOS:\033[0m     %s\n", os_name);
+        printf("\033[1;32m ██  █ █▄▄█ █  ██\033[0m   \033[1;32mKernel:\033[0m %s\n", os_info.release);
+        printf("\033[1;32m  ██  █    █  ██ \033[0m   \033[1;32mUptime:\033[0m %ldh %ldm\n", uptime_hours, uptime_mins);
+        printf("\033[1;32m   ▀████████▀   \033[0m   \033[1;32mMemory:\033[0m %ld MiB / %ld MiB\n", used_ram, total_ram);
+        printf("                   ");
+        for (int i = 0; i < 8; i++) printf("\033[4%dm   ", i);
+        printf("\033[0m\n\n");
     }
     else if (strstr(os_id, "ubuntu") != NULL) {
         printf("\033[1;31m     _---_       \033[0m   \033[1;32m%s\033[0m@\033[1;32m%s\033[0m\n", username, hostname);
@@ -93,14 +95,19 @@ int main() {
         printf("\033[1;34m     /  __/      \033[0m   \033[1;34mKernel:\033[0m %s\n", os_info.release);
         printf("\033[1;34m     | |         \033[0m   \033[1;34mUptime:\033[0m %ldh %ldm\n", uptime_hours, uptime_mins);
         printf("\033[1;34m     \\_/         \033[0m   \033[1;34mMemory:\033[0m %ld MiB / %ld MiB\n", used_ram, total_ram);
-    } 
+    }
     else {
-        printf("\033[1;33m     _____       \033[0m   \033[1;32m%s\033[0m@\033[1;32m%s\033[0m\n", username, hostname);
-        printf("\033[1;33m    /  o o \\     \033[0m   ---------------------\n");
-        printf("\033[1;33m   (((  -  )))   \033[0m   \033[1;33mOS:\033[0m     %s\n", os_name);
-        printf("\033[1;33m    \\_____/      \033[0m   \033[1;33mKernel:\033[0m %s\n", os_info.release);
-        printf("\033[1;33m    /     \\      \033[0m   \033[1;33mUptime:\033[0m %ldh %ldm\n", uptime_hours, uptime_mins);
-        printf("\033[1;33m   (_______)     \033[0m   \033[1;33mMemory:\033[0m %ld MiB / %ld MiB\n", used_ram, total_ram);
+        // Universal Fallback Standard (Yellow)
+        printf("\033[1;33m  ▄██████████▄  \033[0m   \033[1;32m%s\033[0m@\033[1;32m%s\033[0m\n", username, hostname);
+        printf("\033[1;33m ██▀        ▀██ \033[0m   ---------------------\n");
+        printf("\033[1;33m ██  ▄▀▀▀▀▄  ██ \033[0m   \033[1;33mOS:\033[0m     %s\n", os_name);
+        printf("\033[1;33m ██  █ ░░ █  ██ \033[0m   \033[1;33mKernel:\033[0m %s\n", os_info.release);
+        printf("\033[1;33m ██  ▀▄▄▄▄▀  ██ \033[0m   \033[1;33mUptime:\033[0m %ldh %ldm\n", uptime_hours, uptime_mins);
+        printf("\033[1;33m ██▄        ▄██ \033[0m   \033[1;33mMemory:\033[0m %ld MiB / %ld MiB\n", used_ram, total_ram);
+        printf("\033[1;33m  ▀██████████▀  \033[0m\n");
+        printf("                   "); 
+        for (int i = 0; i < 8; i++) printf("\033[4%dm   ", i);
+        printf("\033[0m\n\n"); 
     }
     
     // Color Blocks
